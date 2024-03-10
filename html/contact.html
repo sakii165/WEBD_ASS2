@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width , initial-scale = 1.0">
+</head>
+
+<style>
+*{
+    margin:0;
+    padding :0;
+    box-sizing :border-box;
+    font-family:'popins',sans-serif;
+}
+
+.page ul {
+
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  background-color: rgb(1, 1, 23);
+}
+
+.page li + li {
+  margin-left: 30px;
+}
+
+.page a {
+  display: block;
+  position: relative;
+  color:  #fff;
+  font-size: 19px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+}
+.page a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: rgb(1, 1, 23);
+  visibility: hidden;
+  width: 0px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.page a:hover:before, .page li:hover > a:before, .page .active > a:before {
+  visibility: visible;
+  width: 25px;
+}
+
+.page a:hover, .page .active > a, .page li:hover > a {
+  color: #29697c;
+  text-decoration: none;
+}
+
+   .contact{
+    min-height: 100vh;
+    padding :50px 100px;
+    background-image:url('./bg1.jpg');
+    mix-blend-mode:screen;
+    background-size :cover; 
+    color:aliceblue;
+
+   }
+   .contactinfo
+   {
+    float:left;
+   }
+   
+   .location{
+    float:right;
+   }
+
+
+</style>
+
+<body>
+    <header id="header" class="header-tops">
+        <div class="main">
+            <nav class="page">
+            <ul style="list-style-type:none">
+                <li><a href="./home.html"><span>Home</span></a></li>
+                <li><a href="./about.html"><span>About</span></a></li>
+                <li><a href="./education.html"><span>Education</span></a></li>
+                <li><a href="./skills.html"><span>Skills</span></a></li>
+                <li><a href="./projects.html"><span>My Projects</span></a></li>
+                <li><a href="./contact.html"><span>Contact</span></a></li>
+                
+            </ul>
+            </nav>
+        </div>
+        </header>
+ 
+
+    <div class="contact">
+
+        <h1>CONTACT</h1>
+        <hr width="8%" size="4" align="left"  color =" rgb(2, 2, 47);">
+        <p><b>I'm currently studying Information Technology at IIITA . In fact I was elected academic highlight student of the course more than once .</b></p>
+        <br>
+        <br>
+        <br>
+        <br>
+    
+        <div class="contactinfo">
+            <div class="box">
+                <div class="icon"><i class="fa-solid fa-location-dot"></i></i></div>
+                <div class="text">
+                    <h3>address</h3> <br>
+                    <p>Indian Institute of Information Technology
+                        Jhalwa
+                        Prayagraj, Uttar Pradesh</p> <br>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="icon"> <i class="fa-regular fa-envelope"></i></div>
+                <div class="text">
+                    <h3>E-mail</h3> <br>
+                    <p>iit2023255@iiita.ac.in</p> <br>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="icon"><i class="fa-solid fa-phone"></i></i></div>
+                <div class="text">
+                    <h3>phone</h3> <br>
+                    <p>+91-8830588711 <br>
+                    +12-456-876-23
+                    </p> <br>
+                </div>
+            </div>
+        </div>
+        <div class="location"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7206.530724030412!2d81.76641224018991!3d25.429390399657688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398533530cce2e67%3A0xbf1514c2084929b7!2sIndian%20Institute%20of%20Information%20Technology%2C%20Jhalwa%2C%20Prayagraj%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1706850170828!5m2!1sen!2sin" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+
+    </div>
+
+   <script src="https://kit.fontawesome.com/b5e2a77469.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

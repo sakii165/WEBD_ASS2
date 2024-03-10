@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width , initial-scale = 1.0">
+    <link rel ="stylesheet" href="styles.css">
+
+    
+</head>
+<style>
+
+*{
+    background-color: rgb(1, 1, 23);
+}
+
+
+.page ul {
+
+display: flex;
+margin: 0;
+padding: 0;
+list-style: none;
+text-decoration: none;
+background-color: rgb(1, 1, 23);
+}
+
+.page li + li {
+margin-left: 30px;
+}
+
+.page a {
+display: block;
+position: relative;
+color:  #fff;
+font-size: 19px;
+font-family: "Poppins", sans-serif;
+font-weight: 400;
+text-decoration: none;
+}
+.page a:before {
+content: "";
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -4px;
+left: 0;
+background-color: rgb(1, 1, 23);
+visibility: hidden;
+width: 0px;
+transition: all 0.3s ease-in-out 0s;
+}
+
+.page a:hover:before, .page li:hover > a:before, .page .active > a:before {
+visibility: visible;
+width: 25px;
+}
+
+.page a:hover, .page .active > a, .page li:hover > a {
+color: #29697c;
+text-decoration: none;
+}
+
+h1{
+color: azure;
+}
+
+h2{
+color: #29697c;
+text-align: center;
+}
+
+.main {
+ color: azure;      
+ width: 80%;
+ height:100%;
+ left:5px;
+ position: relative;
+ font-size: 20px;
+}
+
+.link
+{
+ color:azure;
+}
+    
+ul
+{
+list-style-type: none;
+}
+</style>
+<body>
+
+    <header id="header" class="header-tops">
+        <div class="main">
+            <nav class="page">
+            <ul style="list-style-type:none">
+                <li><a href="./home.html"><span>Home</span></a></li>
+                <li><a href="./about.html"><span>About</span></a></li>
+                <li><a href="./education.html"><span>Education</span></a></li>
+                <li><a href="./skills.html"><span>Skills</span></a></li>
+                <li><a href="./projects.html"><span>My Projects</span></a></li>
+                <li><a href="./contact.html"><span>Contact</span></a></li>
+                
+            </ul>
+            </nav>
+        </div>
+     </header>
+   
+<div class="main">
+    <h1 align="left">ABOUT</h1>
+
+    <p> <b>I started my development field at 18 years old when I entered university and deepended my knowlwdge to levels I never imagined ! </b></p>
+
+    <div><img src="./profile.jpg" style=" width:30% ; height:25% ; float:left; margin-top: 4%; margin-left: 4%;"></div>
+
+    <div style="float:left; margin-top: 4%;margin-left: 10%;">
+
+       <h2>UI/UX Designer & Web Developer</h2>
+    
+       <div style=" float:left ;"> <ul>
+            <li><b>Birthday</b>: 16 October 2005</li><br>
+            <li><b>Website</b>: www.example.com</li><br>
+            <li><b>Phone</b>:  +91 8830588711</li><br>
+            <li><b>City</b>: prayagraj, UP</li><br>
+
+          </ul>
+        </div>
+
+     <div style = "float:left; margin-left: 10px;">
+        <ul>
+            <li><b>Age :</b> 18</li><br>
+            <li><b>Degree :</b> BTECH</li><br>
+            <li><b>PhEmailone:</b> iit2023255@iiita.ac.in</li><br>
+            <li><b>Freelance: </b> Available</li><br>
+        </ul>
+     </div>
+    </div>
+   
+</div>
+
+    
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: -50px;
+            transition: top 0.3s;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .section {
+            height: 500px;
+            margin: 20px 0;
+        }
+    </style>
+    <title>Scrolling Navigation Bar</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#section1">Section 1</a></li>
+                <li><a href="#section2">Section 2</a></li>
+                <li><a href="#section3">Section 3</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="section1" class="section">Section 1 Content</div>
+    <div id="section2" class="section">Section 2 Content</div>
+    <div id="section3" class="section">Section 3 Content</div>
+
+    <script>
+        let prevScrollPos = window.pageYOffset;
+
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;
+
+            if (prevScrollPos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-50px";
+            }
+
+            prevScrollPos = currentScrollPos;
+        };
+    </script>
+</body>
+</html>

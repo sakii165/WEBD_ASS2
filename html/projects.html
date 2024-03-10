@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width , initial-scale = 1.0">
+    <link rel ="stylesheet" href="styles.css">    
+</head>
+<style>
+body{
+    background-color: rgb(235, 235, 243);
+}
+
+
+.page ul {
+
+display: flex;
+margin: 0;
+padding: 0;
+list-style: none;
+text-decoration: none;
+background-color: rgb(1, 1, 23);
+}
+
+.page li + li {
+margin-left: 30px;
+}
+
+.page a {
+display: block;
+position: relative;
+color:  #fff;
+font-size: 19px;
+font-family: "Poppins", sans-serif;
+font-weight: 400;
+text-decoration: none;
+}
+.page a:before {
+content: "";
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -4px;
+left: 0;
+background-color: rgb(223, 223, 231);
+visibility: hidden;
+width: 0px;
+transition: all 0.3s ease-in-out 0s;
+}
+
+.page a:hover:before, .page li:hover > a:before, .page .active > a:before {
+visibility: visible;
+width: 25px;
+}
+
+.page a:hover, .page .active > a, .page li:hover > a {
+color: #29697c;
+text-decoration: none;
+}
+
+.text{
+    color: #fff;
+    font-family: monospace;
+    font-size:20px;
+    margin-top: 5%;
+}
+
+.linkstoproject{
+    margin-top:2%;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: monospace;
+    color: aliceblue;
+}
+   
+.box{
+    background-color: #29697c;
+}
+
+
+</style>
+
+
+</style>
+<body>
+    <header id="header" class="header-tops">
+        <div class="main">
+            <nav class="page">
+            <ul style="list-style-type:none">
+                <li><a href="./home.html"><span>Home</span></a></li>
+                <li><a href="./about.html"><span>About</span></a></li>
+                <li><a href="./education.html"><span>Education</span></a></li>
+                <li><a href="./skills.html"><span>Skills</span></a></li>
+                <li><a href="./projects.html"><span>My Projects</span></a></li>
+                <li><a href="./contact.html"><span>Contact</span></a></li>
+                
+            </ul>
+            </nav>
+        </div>
+    </header>
+<div class="sec">
+    <div class="linkstoproject">
+        <div class="box"><li><a href="./LAB_ASS2/1.html">1) Responsive sliding login and registration.</a></li></div><br><br>
+        <div class="box"><li><a href="./LAB_ASS2/2.html">2) Student Grade Calculator</a></li></div><br><br>
+        <div class="box"><li><a href="./LAB_ASS2/3.html">3) Slide Down a Navigation Bar on Scroll</a></li></div><br><br>
+        <div class="box"><li><a href="./LAB_ASS2/4.html">4) A BMI Calculator.</a></li></div><br><br>
+        <div class="box"><li><a href="./LAB_ASS2/6.html">5) Task Tracker Project.</a></li></div><br><br>
+        <div class="box"><li><a href="./LAB_ASS2/7.html">6) Detect network speed using JavaScript</a></li></div><br><br>
+        <div class="box"><li><a href="./LAB_ASS2/8.html">7) An Analog Clock</a></li></div><br><br>
+        <div class="box"><li><a href="./LAB_ASS2/9.html">8) Pay Role Management Webpage</a></li></div><br><br>
+        <div class="box"><li><a href="./LAB_ASS2/10.html">9) Mousemove parallax effects</a></li></div><br><br>
+        <div class="box"><li><a href="./LAB_ASS2/12.html">10) Build a Text to Speech Converter</a></li></div><br><br>
+        <div class="box"><li><a href="./LAB_ASS2/6_7.html">11) A Tip Calculator</a></li></div><br><br>
+    </div>
+
+</div> 
+
+</body>

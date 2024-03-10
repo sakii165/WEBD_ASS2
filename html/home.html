@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width , initial-scale = 1.0">
+</head>
+
+<style>
+*{
+    background-color: rgb(1, 1, 23);
+    background-size: cover;
+   
+}
+
+
+
+.name{
+    color:#226071;
+    font-size:30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20%;
+    margin-left:20%;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,#000000);
+    line-height: 0.90em;
+    outline:none;
+    animation: animate 1.5s ease-in-out infinite alternate;
+    
+}
+@keyframes animate{
+   from{
+        text-shadow: 0 0 20px #29697c;
+   }
+    to
+    {
+        text-shadow: 0 0 30px #29697c,
+        0 0 10px #29697c,
+        0 0 40px #29697c,
+        0 0 80px #29697c,
+        0 0 160px #29697c,
+    }
+}
+
+
+.dynamic-txts{
+    display: inline-flex;
+    position: relative;
+    color: beige;
+    font-size: 20px;
+    margin-left:20%;
+    letter-spacing:7px;
+}
+
+.dynamic-txts::after{
+    content:"";
+    position:absolute;
+    height:100%;
+    width:100%;
+    border-left: 2px solid beige;
+    background:rgb(1, 1, 23);
+    animation: typing 2s steps(17) infinite ;
+    left:0;
+    
+}
+
+@keyframes typing {
+   100%{
+    left:0;
+    margin:0 -250px 0 250px;
+   }
+}
+
+.icon{
+    margin-left:20%;
+    margin-top: 2%;
+}
+.main{
+    color: aliceblue;
+    font-size: 20px;
+    margin-left:20%;
+    margin-top: 2%;
+}
+.page ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.page li + li {
+  margin-left: 30px;
+}
+
+.page a {
+  display: block;
+  position: relative;
+  color: #fff;
+  font-size: 19px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+}
+.page a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #ffffff;
+  visibility: hidden;
+  width: 0px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.page a:hover:before, .page li:hover > a:before, .page .active > a:before {
+  visibility: visible;
+  width: 25px;
+}
+
+.page a:hover, .page .active > a, .page li:hover > a {
+  color: #29697c;
+  text-decoration: none;
+}
+
+h2{
+color: #29697c;
+text-align: center;
+}
+.page ul {
+
+display: flex;
+margin: 0;
+padding: 0;
+list-style: none;
+text-decoration: none;
+background-color: rgb(1, 1, 23);
+}
+
+</style>
+
+<body>
+<section id="home">
+    <div class="home">
+
+        <div class="name">
+        <h1>SAKSHI MUNDHE</h1>
+        </div>
+
+        <div class="anime">
+            <div class="dynamic-txts"> I'm a designer...</div>
+        </div>
+
+        <header id="header" class="header-tops">
+        <div class="main">
+            <nav class="page">
+            <ul style="list-style-type:none">
+                <li><a href="./home.html"><span>Home</span></a></li>
+                <li><a href="./about.html"><span>About</span></a></li>
+                <li><a href="./education.html"><span>Education</span></a></li>
+                <li><a href="./skills.html"><span>Skills</span></a></li>
+                <li><a href="./projects.html"><span>My Projects</span></a></li>
+                <li><a href="./contact.html"><span>Contact</span></a></li>
+                
+            </ul>
+            </nav>
+        </div>
+        </header>
+    
+
+        <div class="icon">
+        <i class="fa-brands fa-instagram fa-2xl" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;
+        <i class="fa-brands fa-twitter fa-2xl" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;
+        <i class="fa-brands fa-whatsapp fa-2xl" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;
+        <i class="fa-brands fa-linkedin fa-2xl" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;
+        <i class="fa-brands fa-github fa-2xl" style="color: #ffffff;"></i>
+        </div>
+    </div>
+        <script src="https://kit.fontawesome.com/b5e2a77469.js" crossorigin="anonymous"></script>
+</section>
+
+</body>
+</html>

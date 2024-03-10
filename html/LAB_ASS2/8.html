@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Role Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-field {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-field label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input-field input {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .check-btn {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .check-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-left: -15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h2>Pay Role Management</h2>
+        </header>
+        <div class="input-field">
+            <label for="bill">Enter the bill amount:</label>
+            <input type="number" id="bill" min="0" placeholder="Bill Amount" required>
+        </div>
+        <div class="input-field">
+            <label for="cash">Cash Given:</label>
+            <input type="number" id="cash" min="0" placeholder="Cash Given" required>
+        </div>
+        <button class="check-btn" id="btn">Check</button>
+        <p class="error-message" id="error"></p>
+        <table>
+            <caption><strong>Return Change</strong></caption>
+            <tr>
+                <th>No of Notes</th>
+                <td class="no-of-notes"></td>
+                <td class="no-of-notes"></td>
+                <td class="no-of-notes"></td>
+                <td class="no-of-notes"></td>
+                <td class="no-of-notes"></td>
+                <td class="no-of-notes"></td>
+                <td class="no-of-notes"></td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>2000</td>
+                <td>500</td>
+                <td>100</td>
+                <td>50</td>
+                <td>20</td>
+                <td>10</td>
+                <td>5</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var inputBill = document.getElementById("bill");
+        var cashGiven = document.getElementById("cash");
+        var checkBtn = document.getElementById("btn");
+        var errMsg = document.getElementById("error");
+        var noOfNotes = document.querySelectorAll(".no-of-notes");
+        var notes = [2000, 500, 100, 50, 20, 10, 5, 1];
+
+        function errorHandle(error) {
+            errMsg.style.display = "block";
+            errMsg.innerText = error;
+        }
+
+        function hideMessage() {
+            errMsg.style.display = "none";
+        }
+
+        function clickHandler() {
+            hideMessage();
+            if (inputBill.value <= 0 || cashGiven.value <= 0) {
+                errorHandle("Please enter valid positive values");
+            } else {
+                var remaining = cashGiven.value - inputBill.value;
+                if (remaining < 0) {
+                    errorHandle("Cash given is less than the bill amount");
+                } else {
+                    for (var i = 0; i < notes.length; i++) {
+                        const paisa = Math.trunc(remaining / notes[i]);
+                        remaining %= notes[i];
+                        noOfNotes[i].innerText = paisa;
+
+                    }
+                }
+            }
+        }
+
+        checkBtn.addEventListener("click", clickHandler);
+    </script>
+</body>
+
+</html>

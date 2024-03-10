@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Day #40 - Detect Internet Speed | AsmrProg</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(#27272a 50%, #075985 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    padding: 0 2em 1em;
+    border-radius: 1em;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    box-shadow: 0 1.6em 2.4em rgba(40, 4, 67, 0.3);
+}
+
+.container img{
+    width: 100%;
+}
+
+p{
+    font-weight: 400;
+    color: #747497;
+}
+
+span{
+    font-weight: 400;
+    color: #090931;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="speedometer.png">
+        <p id="info"><span>...</span></p>
+        <p id="mbs"><span>Speed In Mbs: </span></p>
+        <p id="kbs"><span>Speed In Kbs: </span></p>
+        <p id="bits"><span>Speed In Bits: </span></p>
+    </div>
+
+
+    <script>
+        let startTime, endTime;
+let imageSize = "";
+let image = new Image();
+let bitSpeed = document.getElementById("bits"),
+    kbSpeed = document.getElementById("kbs"),
+    mbSpeed = document.getElementById("mbs"),
+    info = document.getElementById("info");
+
+let totalBitSpeed = 0;
+let totalKbSpeed = 0;
+let totalMbSpeed = 0;
+let numTests = 1;
+let testCompleted = 0;
+
+// Get random image from unsplash.com
+let imageApi = "https://source.unsplash.com/random?topic=nature";
+
+// When image loads
+image.onload = async function () {
+    endTime = new Date().getTime();
+
+    // Get image size
+    await fetch(imageApi).then((response) => {
+        imageSize = response.headers.get("content-length");
+        calculateSpeed();
+    });
+};
+
+// Function to calculate speed
+function calculateSpeed() {
+    // Time taken in seconds
+    let timeDuration = (endTime - startTime) / 1000;
+    // Total bits
+    let loadedBits = imageSize * 8;
+    let speedInBts = loadedBits / timeDuration;
+    let speedInKbs = speedInBts / 1024;
+    let speedInMbs = speedInKbs / 1024;
+
+    totalBitSpeed += speedInBts;
+    totalKbSpeed += speedInKbs;
+    totalMbSpeed += speedInMbs;
+
+    testCompleted++;
+
+    // If all tests completed (we get 5 image then calculate average)
+    if (testCompleted === numTests) {
+        let averageSpeedInBps = (totalBitSpeed / numTests).toFixed(2);
+        let averageSpeedInKbps = (totalKbSpeed / numTests).toFixed(2);
+        let averageSpeedInMbps = (totalMbSpeed / numTests).toFixed(2);
+
+        // Display average speeds
+        bitSpeed.innerHTML += `${averageSpeedInBps}`;
+        kbSpeed.innerHTML += `${averageSpeedInKbps}`;
+        mbSpeed.innerHTML += `${averageSpeedInMbps}`;
+        info.innerHTML = "Test Completed!";
+    } else {
+        // Run the next test
+        startTime = new Date().getTime();
+        image.src = imageApi;
+    }
+}
+
+// Initial function to start tests
+const init = async () => {
+    info.innerHTML = "Testing...";
+    startTime = new Date().getTime();
+    image.src = imageApi;
+};
+
+// Run tests when window loads
+window.onload = () => {
+    for (let i = 0; i < numTests; i++) {
+        init();
+    }
+};
+    </script>
+</body>
+
+</html>
